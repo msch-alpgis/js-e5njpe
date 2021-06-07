@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding="UTF-8" ?>
+<wfs:FeatureCollection xmlns:ms="http://mapserver.gis.umn.edu/mapserver"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:wfs="http://www.opengis.net/wfs/2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://mapserver.gis.umn.edu/mapserver http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd" timeStamp="2021-06-07T09:31:58" numberMatched="1" numberReturned="1">
+    <wfs:boundedBy>
+        <gml:Envelope srsName="urn:ogc:def:crs:EPSG::2056">
+            <gml:lowerCorner>2618769.496000 1170056.511000</gml:lowerCorner>
+            <gml:upperCorner>2618814.925000 1170102.777000</gml:upperCorner>
+        </gml:Envelope>
+    </wfs:boundedBy>
+    <wfs:member>
+        <ms:Liegenschaften gml:id="Liegenschaften.1">
+            <gml:boundedBy>
+                <gml:Envelope srsName="urn:ogc:def:crs:EPSG::2056">
+                    <gml:lowerCorner>2618769.496000 1170056.511000</gml:lowerCorner>
+                    <gml:upperCorner>2618814.925000 1170102.777000</gml:upperCorner>
+                </gml:Envelope>
+            </gml:boundedBy>
+            <ms:geom>
+                <gml:Polygon gml:id="Liegenschaften.1.1" srsName="urn:ogc:def:crs:EPSG::2056">
+                    <gml:exterior>
+                        <gml:LinearRing>
+                            <gml:posList srsDimension="2">2618793.726000 1170056.511000 2618814.925000 1170077.647000 2618804.039000 1170091.698000 2618794.494000 1170102.777000 2618769.496000 1170080.877000 2618793.726000 1170056.511000 </gml:posList>
+                        </gml:LinearRing>
+                    </gml:exterior>
+                </gml:Polygon>
+            </ms:geom>
+            <ms:nummer>5344</ms:nummer>
+        </ms:Liegenschaften>
+    </wfs:member>
+</wfs:FeatureCollection>
+
