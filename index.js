@@ -1,5 +1,6 @@
 import proj4 from 'proj4';
 import { register } from 'ol/proj/proj4';
+import WFS from 'ol/format/WFS';
 
 proj4.defs(
   'EPSG:2056',
@@ -11,14 +12,29 @@ proj4.defs(
 register(proj4);
 
 function fakeRequest(fileName) {
-  const request = new Request(`/assets/${fileName}`);
-  fetch(request)
+  const url = `https://raw.githubusercontent.com/msch-alpgis/js-e5njpe/master/assets/${fileName}`;
+  fetch(url)
     .then(response => response.text())
     .then(xml => {
-      console.log(xml);
+
+      const parser = new WFS({
+        featureNS: 'http://mapserver.gis.umn.edu/mapserver',
+        featureType: ['Liegenschaften', 'LFP3a'],
+        version: '2.0.0'
+      });
+      const features = parser.readFeatures(xml);
+
+      const resultEle = document.getElementById('result');
+      let result = 'Expected features: ' + (fileName === 'single.xml' ? 1 : 2);
+      result += '\nRead features: ' + features.length;
+      resultEle.innerHTML = result;
     });
 }
 
 document.getElementById('single').addEventListener('click', _ => {
   fakeRequest('single.xml');
+});
+
+document.getElementById('multi').addEventListener('click', _ => {
+  fakeRequest('multi.xml');
 });
